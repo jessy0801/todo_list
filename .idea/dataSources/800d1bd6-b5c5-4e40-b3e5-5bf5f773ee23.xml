@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="todo_list@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.3">
+    <root id="1"/>
+    <schema id="2" parent="1" name="africa">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="freeads"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="my_blog"/>
+    <schema id="7" parent="1" name="my_cinema"/>
+    <schema id="8" parent="1" name="my_framework"/>
+    <schema id="9" parent="1" name="my_imap_client"/>
+    <schema id="10" parent="1" name="my_quiz"/>
+    <schema id="11" parent="1" name="performance_schema"/>
+    <schema id="12" parent="1" name="phpmyadmin"/>
+    <schema id="13" parent="1" name="Projet_Web_3"/>
+    <schema id="14" parent="1" name="sys"/>
+    <schema id="15" parent="1" name="test_agence_kali"/>
+    <schema id="16" parent="1" name="todo_list">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="17" parent="1" name="u_bet"/>
+    <schema id="18" parent="1" name="wordpress"/>
+    <table id="19" parent="2" name="categories"/>
+    <table id="20" parent="2" name="objet"/>
+    <table id="21" parent="16" name="categories"/>
+    <table id="22" parent="16" name="item_list"/>
+    <column id="23" parent="19" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="24" parent="19" name="nom">
+      <Position>2</Position>
+      <DataType>tinytext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="19" name="description">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="19" name="date_ajout">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="27" parent="19" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="20" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="29" parent="20" name="id_categorie">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="20" name="titre">
+      <Position>3</Position>
+      <DataType>tinytext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="20" name="text">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="20" name="image_name">
+      <Position>5</Position>
+      <DataType>tinytext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="20" name="vendu">
+      <Position>6</Position>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="34" parent="20" name="date_ajout">
+      <Position>7</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="35" parent="20" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="36" parent="21" name="title">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="21" name="description">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="38" parent="21" name="priority">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="39" parent="21" name="add_time">
+      <Position>4</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <column id="40" parent="21" name="id">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <key id="41" parent="21" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="42" parent="22" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="43" parent="22" name="id_cat">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="44" parent="22" name="text">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="22" name="done">
+      <Position>4</Position>
+      <DataType>tinyint(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="46" parent="22" name="priority">
+      <Position>5</Position>
+      <DataType>tinyint(4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="47" parent="22" name="add_time">
+      <Position>6</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+    </column>
+    <key id="48" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

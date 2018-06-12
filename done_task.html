@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mind Clearer - Tache terminée</title>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/angular.min.js"></script>
+    <script src="public/js/main.js"></script>
+
+</head>
+<body ng-app="myTodoList"  ng-controller="doneTask" >
+<div class="jumbotron">
+    <h1>Mind Clearer</h1>
+    <h5 class="font-weight-light">Semi-Perfect TodoList</h5><br>
+    <h3 ng-show="items.length > 1">Vous avez {{items.length}} tache termniée</h3>
+    <h3 ng-show="items.length == 1">Vous avez une tache termnier</h3>
+</div>
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <li class="nav-item active"><a class="nav-link" href="done_task.html">Tache terminée</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">A propos</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<aside class="col-5 float-right">
+
+</aside>
+
+<section class="container" >
+
+    <label title="Cliquez pour trier"  class="form-inline form-group" for="sortBy">Trier par :
+        <select
+                id="sortBy"
+                class="form-control"
+                ng-model="sortby"
+                ng-options="option.name for option in optionsSort"
+                ng-change="changeSort()">
+        </select>
+        <button title="Cliquez pour changer l'ordre"  class="btn btn-light" ng-mousedown="changeOrder()" ><img style="max-height: 22px;" src="public/icon/829020_down_512x512.png" class="order-{{order}}" alt=""></button>
+    </label>
+    <ul class="list-unstyled" >
+
+
+        <li ng-repeat="item in items" class="task"  >
+
+            <label  class="control control-checkbox">
+            <input style="float: left" type="checkbox" id="item-{{item.id}}" value="{{item.done}}" ng-checked="item.done==1" ng-click="undoneItem(item.id)">
+                <div  title="Cliquez pour indiquer comme non fait" class="control_indicator"></div>
+            </label>
+            <span title="Date d'ajout" class="float-left addtime">{{item.add_time}}</span>
+
+            <div title="Cliquez pour editer la tache" style="overflow-wrap: break-word;" class="d-inline itemdone{{item.done}}" contenteditable="true" ng-click="tesf(item.id)" ng-model="test" >{{item.text}}
+            </div>
+
+            <button title="Cliquez pour sauvgarder" class="btn btn-success" ng-show="edit{{item.id}}" ng-mousedown="saveEdit(test, item.id)" >Save</button>
+            <button title="Cliquez pour annuler" class="btn btn-danger" ng-show="cancel{{item.id}}"  ng-mousedown="cancelEdit(item.id)" >Cancel</button>
+            <button title="Cliquez pour suprimer la tache" style="float: right;padding: 4px;margin-left: 10px" class=" btn btn-danger" ng-mousedown="delItem(item.id)">
+                <img style="max-width: 28px;" src="public/icon/693474_delete_512x512.png" alt=""></button>
+
+            <!--<span style="margin: 0 10px" class="float-right">{{item.priority}}</span>
+            <button  style="float: right" class=" btn btn-success" ng-mousedown="increasePrio(item.id)">+</button>-->
+
+        </li>
+
+    </ul>
+</section>
+</body>
+</html>

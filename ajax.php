@@ -6,11 +6,19 @@ header("Content-Type: application/json; charset=UTF-8");*/
 // Get tasks with order
 if (!empty($_POST['item']) && $_POST['item'] === 'all' && $_POST['sortBy'] && !empty($_POST['order'])) {
     require ('public/database.php');
-    $sql = 'SELECT * FROM item_list ORDER BY '.$_POST['sortBy'].' '.$_POST['order'].' ';
+    $sql = 'SELECT * FROM item_list WHERE done = 0  ORDER BY '.$_POST['sortBy'].' '.$_POST['order'].' ';
     $query = $bdd->query($sql);
     $data = $query->fetchAll();
     echo json_encode($data);
 }
+else if (!empty($_POST['item']) && $_POST['item'] === 'doneTask' && $_POST['sortBy'] && !empty($_POST['order'])) {
+    require ('public/database.php');
+    $sql = 'SELECT * FROM item_list WHERE done = 1 ORDER BY '.$_POST['sortBy'].' '.$_POST['order'].' ';
+    $query = $bdd->query($sql);
+    $data = $query->fetchAll();
+    echo json_encode($data);
+}
+
 /*} else if (!empty($_POST['item']) && $_POST['item'] === 'add' && !empty($_POST['sortBy']) && $_POST['sortBy'] === 'priority') {
     require public/('database.php;
     $sql = 'SELECT * FROM item_list ORDER BY priority';
@@ -65,16 +73,16 @@ else if (!empty($_POST['item']) && $_POST['item'] === 'undone' && !empty($_POST[
 //increase priority task
 else if (!empty($_POST['item']) && $_POST['item'] === 'addPrio' && !empty($_POST['id'])) {
     require ('public/database.php');
-    $sql = 'UPDATE item_list SET priority = priority + 1 WHERE id = :id';
+    $sql = 'UPDATE item_list SET priority = 1 WHERE id = :id';
     $prep = $bdd->prepare($sql);
     $prep->bindParam(':id', $_POST['id']);
     $data = $prep->execute();
 }
 
 //decrease priority task
-else if (!empty($_POST['item']) && $_POST['item'] === 'downPrio' && !empty($_POST['id'])) {
+else if (!empty($_POST['item']) && $_POST['item'] === 'rmPrio' && !empty($_POST['id'])) {
     require ('public/database.php');
-    $sql = 'UPDATE item_list SET priority = priority - 1 WHERE id = :id';
+    $sql = 'UPDATE item_list SET priority = 0 WHERE id = :id';
     $prep = $bdd->prepare($sql);
     $prep->bindParam(':id', $_POST['id']);
     $data = $prep->execute();

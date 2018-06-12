@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mind Clearer - A propos</title>
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <script src="public/js/bootstrap.min.js"></script>
+    <script src="public/js/angular.min.js"></script>
+    <script src="public/js/main.js"></script>
+
+</head>
+<body ng-app="myTodoList"  ng-controller="about" >
+<div class="jumbotron">
+    <h1>Mind Clearer</h1>
+    <h5 class="font-weight-light" >Semi-Perfect TodoList</h5><br>
+    <h3 ng-show="items.length > 1">Vous avez {{items.length}} choses à faire</h3>
+    <h3 ng-show="items.length === 1">Vous avez une chose à faire</h3>
+</div>
+<header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="done_task.html">Tache terminée</a></li>
+            <li class="nav-item active"><a class="nav-link active" href="about.html">A propos</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="container" >
+    <br><h4 class="text-center">Vider votre esprit avec Mind Clearer !</h4><br><br>
+
+
+
+    <p>Son interface épurée vous permet d'organiser toutes les choses que vous avez à faire.
+
+        Vous pouvez y rentrer un nombre illimité de "chose à faire" et les organiser par ordre de priorité et par date.
+
+        Vous avez terminé une tache, rien de plus simple en un click vous cochez et elle devient rayée et se retrouve dans "taches terminées" et donc n'est plus à faire!
+
+        Mais Oups!!!
+
+        vous réalisez qu'elle n'est pas totalement terminée, pas de problème allez dans "taches terminées" et en un click elle redevient "chose à faire".</p>
+</section>
+</body>
+</html>
