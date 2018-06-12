@@ -1,0 +1,18 @@
+ul {
+    padding: 0;
+}
+.jumbotron {
+    margin-bottom: 0;
+
+}
+.itemdone1 {
+    text-decoration: line-through;
+    color: #7c8991;
+}
+.itemdone0 {
+    text-decoration: none;
+    color: black;
+}
+.order-ASC {
+    transform: rotate(180deg);
+}
